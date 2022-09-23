@@ -49,6 +49,16 @@ int main()
 	printf("%s\n",std::bitset<sizeof(a)*8>(a).to_string().c_str());
 	clara();
 	printf("back to main\n");
+	FILE *fp=fopen("/usr/share/dict/words","r");
+	char *line=0;
+	size_t len;
+	ssize_t linelen;
+	linelen= getline(&line,&len, fp);
+	printf ("len: %ld\n",len);
+	printf ("linelen: %ld\n", linelen);
+	printf ("line: %s\n", line);
+	free (line);
+	fclose(fp);
 	return 0;
 }
 
