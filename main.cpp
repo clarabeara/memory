@@ -53,6 +53,15 @@ int main()
 	char *line=0;
 	size_t len;
 	ssize_t linelen;
+	printf("enter the number on sides of your dice.");
+	linelen= getline(&line,&len, stdin);
+	printf("you typed: %s\n",line);		
+	int n=atoi(line);
+	printf("number of sides %d\n",n);
+	// talk about this:
+	//srand48(time(0));
+	int r=lrand48();
+	printf("random number %d\n",r);
 	linelen= getline(&line,&len, fp);
 	printf ("len: %ld\n",len);
 	printf ("linelen: %ld\n", linelen);
